@@ -16,7 +16,7 @@ import indexView from '../routes/index.js';
 const getConfig = (index, key, file) => parse(readFileSync(`./config/${file? file: 'default'}.ini`, 'UTF-8'))[index][key] || null;
 
 // Get Host And Port
-const [webHost, webPort, wssHost, wssPort] = new Array(getConfig('WebServer', 'host'), getConfig('WebServer', 'port'), getConfig('WebSocket', 'host'), getConfig('WebSocket', 'port'));
+const [webHost, webPort, wssHost, wssPort] = new Array(getConfig('webServer', 'host'), getConfig('webServer', 'port'), getConfig('webSocket', 'host'), getConfig('webSocket', 'port'));
 
 // Initialize Koa Instance
 const webServer = new Koa;

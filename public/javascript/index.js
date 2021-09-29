@@ -24,7 +24,7 @@ window.addEventListener('load', global => {
 			const { 
 				host,
 				port
-			} = parse(await reLoad()).WebSocket;
+			} = parse(await reLoad()).exteriorWebSocket;
 			const server = new WebSocket(reSet(`ws://${host}:${port}`));
 
 			server.addEventListener('open', subEvent => {

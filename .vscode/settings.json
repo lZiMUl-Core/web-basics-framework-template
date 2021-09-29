@@ -7,5 +7,5 @@
     "prettier.vueIndentScriptAndStyle": true,
     "files.simpleDialog.enable": true,
     "workbench.sideBar.location": "right",
-    "editor.fontSize": 7
+    "editor.fontSize": 12
 }

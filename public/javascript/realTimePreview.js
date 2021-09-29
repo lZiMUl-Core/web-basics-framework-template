@@ -32,12 +32,12 @@ window.addEventListener('load', async Global => {
 	const { 
 		host,
 		port 
-	} = parse(await reLoad()).WebSocket;
+	} = parse(await reLoad()).exteriorWebSocket;
 
 	new ApiVerify('WebSocket', event => {
 		const server = new WebSocket(reSet(`ws://${host}:${port}`));
 		server.addEventListener('open', event => server.send('Hello, I Am A Website Client'));
-		server.addEventListener('message', event => console.log(event.data));
+		server.addEventListener('message', ({data}) => console.log(data));
 		server.addEventListener('error', reFresh);
 		server.addEventListener('close', reFresh);
 	}, event => {
