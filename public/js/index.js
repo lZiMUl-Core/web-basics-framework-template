@@ -7,18 +7,16 @@ ProjectAuthor: lZiMUl
  */
 
 // Import ApiVerify And ReLoad And Parse And Reset
-import ApiVerify from '../../public/javascript/apiVerify.js';
+import ApiVerify from '../../public/js/apiVerify.js';
 import reLoad from '../../plugin/its/index.js';
 import { parse } from '../../plugin/iniparse/index.js';
 import { 
 	reSet,
 	log
-} from '../../public/javascript/realTimePreview.js';
+} from '../../public/js/realTimePreview.js';
 
 // MainActivity
 window.addEventListener('load', global => {
-	new VConsole;
-
 	new ApiVerify('navigator', event => {
 		event.geolocation.getCurrentPosition(async event => {
 			const { 
@@ -62,4 +60,18 @@ window.addEventListener('load', global => {
 	}, event => {
 		log("Your Current Browser Does Not Support Location Service Agreement");
 	});
+	Vue.createApp({
+		"data": () => ({
+			"default": 2,
+			"value": 2
+		}),
+		"methods": {
+			"calculate": function () {
+				if(this.value <= 0) {
+					this.value = this.default;
+				};
+				this.value += Math.floor(this.value <= 1000? Math.random() * this.value: -Math.sqrt(this.value * new Date().getTime().toString().substring(0, new Array(1, 2, 3, 4, 5, 6, 7)[Math.random() * 6])));
+			}
+		}
+	}).mount('#vueView');
 });

@@ -51,7 +51,7 @@ http://${webHost}:${webPort}/
 new WebSocketServer({
 	"host": wssHost,
 	"port": wssPort
-}).on('connection', socket => {
-	socket.on('message', event => log(new String(event)));
+}).addListener('connection', socket => {
+	socket.addListener('message', event => log(new String(event)));
 	socket.send('Hello, I Am A WebSocket Server');
 });

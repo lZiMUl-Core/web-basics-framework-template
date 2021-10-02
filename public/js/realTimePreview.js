@@ -9,7 +9,7 @@ ProjectAuthor: lZiMUl
 // Import Config And Ini Parser And ApiVerify
 import reLoad from '../../plugin/its/index.js';
 import { parse } from '../../plugin/iniparse/index.js';
-import ApiVerify from '../../public/javascript/apiVerify.js';
+import ApiVerify from '../../public/js/apiVerify.js';
 
 const log = console.log;
 

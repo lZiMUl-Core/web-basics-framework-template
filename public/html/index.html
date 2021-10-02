@@ -8,16 +8,16 @@
 		<title>Welcome To WebBasicsFrame Page</title>
 		<link rel="icon" href="./resource/image/favicon.ico">
 		<link rel="stylesheet" type="text/css" href="./public/css/index.css" media="all" />
-		<script language="javascript" type="module" src="./public/javascript/realTimePreview.js"></script>
-		<script language="javascript" type="text/javascript" src="./public/javascript/jquery.js"></script>
-		<script language="javascript" type="text/javascript" src="./public/javascript/vue3.js"></script>
-		<script language="javascript" type="text/javascript" src="./public/javascript/vconsole.js"></script>
-		<script language="javascript" type="text/javascript" src="./public/javascript/tecate.js"></script>
-		<script language="javascript" type="module" src="./public/javascript/index.js"></script>
+		<script language="javascript" type="module" src="./public/js/realTimePreview.js"></script>
+		<script language="javascript" type="text/javascript" src="./public/js/jquery.js"></script>
+		<script language="javascript" type="text/javascript" src="./public/js/vue3.js"></script>
+		<script language="javascript" type="text/javascript" src="./public/js/vconsole.js"></script>
+		<script language="javascript" type="text/javascript" src="./public/js/tecate.js"></script>
+		<script language="javascript" type="module" src="./public/js/index.js"></script>
 	</head>
 	<body>
 		<header>
-			<h1>This Is My First Interface [WebBasicsFrame]</h1>
+			<h1>This Is My First Interface webBasicsFrame</h1>
 		</header>
 		<div id="App" class="App">
 			<form action="/GetData" method="POST">
@@ -27,6 +27,10 @@
 				<br />
 				<span><input type="submit" value="Login" /></span>
 			</form>
+			<div id="vueView">
+				<h3 v-text="value"></h3>
+				<p @click="calculate">点击</p>
+			</div>
 		</div>
 		<footer>
 			<p>© 2021~2041 lZiMUl (AA2908554069@gmail.com). All Rights Reserved.</p>
