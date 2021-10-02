@@ -6,16 +6,20 @@
 		"email": "AA2908554069@gmail.com",
 		"url": "https://b23.tv/vUMYbj"
 	},
-	"contributors": [{
-		"name": "lZiMUl",
-		"email": "AA2908554069@gmail.com",
-		"url": "https://b23.tv/vUMYbj"
-	}],
-	"maintainers": [{
-		"name": "lZiMUl",
-		"email": "AA2908554069@gmail.com",
-		"url": "https://b23.tv/vUMYbj"
-	}],
+	"contributors": [
+		{
+			"name": "lZiMUl",
+			"email": "AA2908554069@gmail.com",
+			"url": "https://b23.tv/vUMYbj"
+		}
+	],
+	"maintainers": [
+		{
+			"name": "lZiMUl",
+			"email": "AA2908554069@gmail.com",
+			"url": "https://b23.tv/vUMYbj"
+		}
+	],
 	"version": "1.0.0",
 	"license": "MIT",
 	"homepage": "https://b23.tv/vUMYbj",
@@ -23,7 +27,8 @@
 	"main": "./src/app.js",
 	"scripts": {
 		"init": "rm -rf ./tool/.empty && npm install && npm install nodemon -g",
-		"dev": "nodemon"
+		"dev": "nodemon",
+		"build": "echo hahaha, Build is not supported."
 	},
 	"man": {
 		"help": [
