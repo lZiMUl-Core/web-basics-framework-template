@@ -1,13 +1,21 @@
 {
 	"name": "web-basics-frame",
 	"description": "Web Basics Frame",
-	"contributors": [
-		{
-			"name": "lzimul",
-			"email": "AA2908554069@gmail.com",
-			"url": "https://b23.tv/vUMYbj"
-		}
-	],
+	"author": {
+		"name": "lZiMUl",
+		"email": "AA2908554069@gmail.com",
+		"url": "https://b23.tv/vUMYbj"
+	},
+	"contributors": [{
+		"name": "lZiMUl",
+		"email": "AA2908554069@gmail.com",
+		"url": "https://b23.tv/vUMYbj"
+	}],
+	"maintainers": [{
+		"name": "lZiMUl",
+		"email": "AA2908554069@gmail.com",
+		"url": "https://b23.tv/vUMYbj"
+	}],
 	"version": "1.0.0",
 	"license": "MIT",
 	"homepage": "https://b23.tv/vUMYbj",
@@ -17,6 +25,18 @@
 		"init": "rm -rf ./tool/.empty && npm install && npm install nodemon -g",
 		"dev": "nodemon"
 	},
+	"man": {
+		"help": [
+			"./docs/courses/index.html"
+		]
+	},
+	"keywords": [
+		"lZiMUl",
+		"WebSite",
+		"Basics",
+		"Template",
+		"Vue"
+	],
 	"dependencies": {
 		"ini": "^2.0.0",
 		"koa": "^2.13.1",
@@ -33,7 +53,7 @@
 		"url": "https://github.com/lZiMUl/WebBasicsFrame/issues/",
 		"email": "AA2908554069@gmail.com"
 	},
-	"private": false,
+	"private": true,
 	"preferGlobal": true,
 	"deprecated": false
 }
