@@ -30,11 +30,6 @@
 		"dev": "nodemon",
 		"build": "echo hahaha, Build is not supported."
 	},
-	"man": {
-		"help": [
-			"./docs/courses/index.html"
-		]
-	},
 	"keywords": [
 		"lZiMUl",
 		"WebSite",
