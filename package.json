@@ -49,7 +49,7 @@
 		"url": "https://github.com/lZiMUl/WebBasicsFrame/issues/",
 		"email": "AA2908554069@gmail.com"
 	},
-	"private": true,
+	"private": false,
 	"preferGlobal": true,
 	"deprecated": false
 }
