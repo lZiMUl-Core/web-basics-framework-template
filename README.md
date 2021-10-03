@@ -9,12 +9,12 @@ Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | 11 ✔ |
 
 Clone Warehouse Command:
 ```
-git clone https://github.com/lZiMUl/WebBasicsFrame.git
+git clone https://github.com/lzimul/web-basics-frame.git
 ```
 
 Initialization Command:
 ```
-cd WebBasicsFrame && npm run init
+cd web-basics-frame && npm run init
 ```
 
 Development Command:
