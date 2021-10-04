@@ -14,7 +14,7 @@ git clone https://github.com/lzimul/web-basics-framework-template.git
 
 Initialization Command:
 ```
-cd web-basics-frame && npm run init
+cd web-basics-framework-template && npm run init
 ```
 
 Development Command:
