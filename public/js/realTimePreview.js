@@ -1,8 +1,8 @@
 'use strict';
 
 /*
-ProjectName: WebBasicsFrame
-ProjectDescription: Web Basics Frame
+ProjectName: web-basics-framework-template
+ProjectDescription: Web Basics Framework Template
 ProjectAuthor: lZiMUl
  */
 

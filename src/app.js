@@ -13,7 +13,7 @@ import Kb from 'koa-bodyparser';
 import indexView from '../routes/index.js';
 
 // Read Configuration Data
-const getConfig = (index, key, file) => parse(readFileSync(`./config/${file? file: 'default'}.ini`, 'UTF-8'))[index][key] || null;
+const getConfig = (index, key, file) => parse(readFileSync(`./config/${file? file: 'default'}.ini`, 'utf-8'))[index][key] || null;
 
 // Get Host And Port
 const [webHost, webPort, wssHost, wssPort] = new Array(getConfig('webServer', 'host'), getConfig('webServer', 'port'), getConfig('webSocket', 'host'), getConfig('webSocket', 'port'));

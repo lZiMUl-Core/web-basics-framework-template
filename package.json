@@ -1,5 +1,5 @@
 {
-	"name": "web-basics-frame",
+	"name": "web-basics-framework-template",
 	"description": "Web Basics Frame",
 	"contributors": [
 		{
@@ -29,7 +29,7 @@
 		"lZiMUl",
 		"WebSite",
 		"Basics",
-		"Frame",
+		"Framework",
 		"Template",
 		"Vue"
 	],
@@ -43,10 +43,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/lZiMUl/WebBasicsFrame.git"
+		"url": "git+https://github.com/lZiMUl/web-basics-framework-template.git"
 	},
 	"bugs": {
-		"url": "https://github.com/lZiMUl/WebBasicsFrame/issues/",
+		"url": "https://github.com/lZiMUl/web-basics-framework-template/issues/",
 		"email": "AA2908554069@gmail.com"
 	},
 	"private": false,

@@ -1,4 +1,4 @@
-# Welcome to WebBasicsFrame
+# Welcome to Web-Basics-Framework-Template
 
 ## Browser Support
 
@@ -9,7 +9,7 @@ Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | 11 ✔ |
 
 Clone Warehouse Command:
 ```
-git clone https://github.com/lzimul/web-basics-frame.git
+git clone https://github.com/lzimul/web-basics-framework-template.git
 ```
 
 Initialization Command:
