@@ -1,7 +1,7 @@
 html, body {
 	width: 100%;
 	height: 100%;
-	background-color: rgba(131, 175, 155, 0);
+	background-color: rgba(131, 175, 155, 255);
 }
 
 header, footer {
@@ -14,7 +14,7 @@ header, footer {
 	margin-bottom: 5px;
 }
 
-.App {
+.app {
 	border: 1px solid grey;
 	margin: 5px;
 	margin-bottom: 15px;

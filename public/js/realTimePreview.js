@@ -45,4 +45,7 @@ window.addEventListener('load', async Global => {
 	});
 });
 
-export { reSet, log };
+export {
+	reSet,
+	log
+};

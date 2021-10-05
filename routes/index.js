@@ -19,12 +19,18 @@ Krs.get('/', async socket => {
 	socket.status = 200;
 	socket.type = 'text/html';
 	socket.body = await getView('index');
-}).post('/GetData', async socket => {
-	const Info = await socket.request.body;
+}).post('/getData', async socket => {
+	const {
+		email,
+		password
+	} = await socket.request.body;
 	socket.status = 200;
 	socket.type = 'text/html';
-	socket.body = `<span><h4>${stringify(Info)}</h4></span>`;
-	log(Info);
+	socket.body = `<span><h4>${email}#${password}</h4></span>`;
+	log({
+		email,
+		password
+	});
 });
 
 // Export Router
