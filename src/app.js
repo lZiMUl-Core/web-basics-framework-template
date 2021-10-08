@@ -2,18 +2,15 @@
 
 // Import Basic Dependencies
 import { WebSocketServer } from 'ws';
-import { readFileSync } from 'fs';
 import Koa from 'koa';
-import { parse } from 'ini';
 import { log } from 'console';
 import Ks from 'koa-static';
 import Kb from 'koa-bodyparser';
+import getConfig from './getConfig.js';
 
 // Import Router
 import indexView from '../routes/index.js';
-
-// Read Configuration Data
-const getConfig = (index, key, file) => parse(readFileSync(`./config/${file? file: 'default'}.ini`, 'utf-8'))[index][key] || null;
+import successView from '../routes/successView.js';
 
 // Get Host And Port
 const [webHost, webPort, wssHost, wssPort] = new Array(getConfig('webServer', 'host'), getConfig('webServer', 'port'), getConfig('webSocket', 'host'), getConfig('webSocket', 'port'));
@@ -25,6 +22,7 @@ const webServer = new Koa;
 webServer.use(new Ks('./'));
 webServer.use(new Kb);
 webServer.use(indexView);
+webServer.use(successView);
 
 // Set Up The 404 Page
 webServer.use(async socket => {

@@ -23,13 +23,9 @@ header, footer {
 .app {
 	border: 1px solid grey;
 	margin: 5px;
-	margin-bottom: 15px;
+	margin-bottom: 1px;
 	text-align: center;
-	line-height: 40px;
+	line-height: 25px;
 	padding: 8px;
 	background-color: white;
-}
-
-.email {
-	margin-left: 20px;
 }
