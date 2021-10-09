@@ -14,6 +14,21 @@ import {
 	reSet,
 	log
 } from '../../public/js/realTimePreview.js';
+import Alert from '../../public/js/customAlert.js';
+
+// Drag Method
+function Drag(event) {
+	event.stopPropagation();
+	const { clientX, clientY } = event.touches[0];
+	event.target.style.width = clientX.toString().concat('px');
+	event.target.style.top = clientY.toString().concat('px');
+};
+
+new Alert({
+	title: 'Web Basics Framework Template',
+	message: '<a href="/">I am a reconstructed Alert function, support HTML tags.</a><br /></br ><a href="https://github.com/lzimul/">Developed by LZIMUL</a>',
+	close: 'Close'
+}).addEventListener('touchmove', Drag, false);
 
 // MainActivity
 window.addEventListener('load', global => {
