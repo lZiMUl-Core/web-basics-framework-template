@@ -1,19 +1,19 @@
 'use strict';
 
 // Import Basic Dependencies
-import { WebSocketServer } from 'ws';
 import Koa from 'koa';
 import { log } from 'console';
 import Ks from 'koa-static';
 import Kb from 'koa-bodyparser';
 import getConfig from './getConfig.js';
+import './webSocketServer.js';
 
 // Import Router
 import indexView from '../routes/index.js';
 import successView from '../routes/successView.js';
 
 // Get Host And Port
-const [webHost, webPort, wssHost, wssPort] = new Array(getConfig('webServer', 'host'), getConfig('webServer', 'port'), getConfig('webSocket', 'host'), getConfig('webSocket', 'port'));
+const [webHost, webPort] = [getConfig('webServer', 'host'), getConfig('webServer', 'port')];
 
 // Initialize Koa Instance
 const webServer = new Koa;
@@ -44,12 +44,3 @@ Copy This Address And Open It In The Browser
 http://${webHost}:${webPort}/
 ----------lZiMUl Build Template----------
 `));
-
-// Set Up A WebSocket Server
-new WebSocketServer({
-	"host": wssHost,
-	"port": wssPort
-}).addListener('connection', socket => {
-	socket.addListener('message', event => log(new String(event)));
-	socket.send('Hello, I Am A WebSocket Server');
-});
