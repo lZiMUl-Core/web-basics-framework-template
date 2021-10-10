@@ -1,5 +1,7 @@
 'use strict';
 
+const { log } = console;
+
 class Alert {
 	static list = [];
 	static frame = null;
@@ -11,7 +13,7 @@ class Alert {
 		this.ssa(FRAME, `position: absolute;
 		left: 10%;
 		right: 10%;`);
-		this.ssa(DIV, `height: 200px;
+		this.ssa(DIV, `height: 230px;
 		background-color: rgba(232, 221, 203, 255);
 		text-align: center;
 		border-radius: 8px;`);
@@ -21,8 +23,9 @@ class Alert {
 		border: 1px solid #000;
 		border-radius: 5px;`);
 		this.ssa(TITLE, `margin: 4.3px 4.3px;`);
-		this.ssa(CONTENTDIV, `height: 120px;
+		this.ssa(CONTENTDIV, `height: 150px;
 		text-align: center;
+		overflow: scroll;
 		margin-top: 3px;
 		margin-left: 5px;
 		margin-right: 5px;
@@ -63,9 +66,8 @@ class Alert {
 		ele.appendChild(doc);
 	}
 	de() {
-		if(Alert.list.length) {
-			this.ac(document.body, Alert.list.shift());
-		}
+		if(Alert.list.length)
+		this.ac(document.body, Alert.list.shift());
 	}
 	addEventListener(event, callback) {
 		Alert.frame.addEventListener(event, callback, false);

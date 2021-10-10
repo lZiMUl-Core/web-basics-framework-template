@@ -7,8 +7,15 @@ ProjectAuthor: lZiMUl
  */
 
 // Little Module
-export default class apiVerify {
+export default class windowApiVerify {
 	constructor(attribute, success, fail) {
-		fail? attribute in window? success(window [attribute]): fail(null): null;
-	};
+		fail? attribute in window? success(window[attribute]): fail(null): null;
+	}
 };
+
+// Little Module
+export class navigatorApiVerify {
+	constructor(attribute, success, fail) {
+		fail? attribute in window.navigator? success(window.navigator[attribute]): fail(null): null;
+	}
+}

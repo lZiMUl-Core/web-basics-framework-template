@@ -2,6 +2,7 @@
 
 // Import Basic Dependencies
 import { WebSocketServer } from 'ws';
+import { log } from 'console';
 import getConfig from './getConfig.js';
 
 // Get Host And Port

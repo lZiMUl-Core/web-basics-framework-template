@@ -9,7 +9,7 @@ ProjectAuthor: lZiMUl
 // Import Config And Ini Parser And ApiVerify
 import reLoad from '../../plugin/its/index.js';
 import { parse } from '../../plugin/iniparse/index.js';
-import ApiVerify from '../../public/js/apiVerify.js';
+import windowApiVerify from '../../public/js/apiVerify.js';
 
 const log = console.log;
 
@@ -34,7 +34,7 @@ window.addEventListener('load', async Global => {
 		port 
 	} = parse(await reLoad()).exteriorWebSocket;
 
-	new ApiVerify('WebSocket', event => {
+	new windowApiVerify('WebSocket', event => {
 		const server = new WebSocket(reSet(`ws://${host}:${port}`));
 		server.addEventListener('open', event => server.send('Hello, I Am A Website Client'));
 		server.addEventListener('message', ({data}) => console.log(data));

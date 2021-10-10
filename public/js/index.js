@@ -7,8 +7,9 @@ ProjectAuthor: lZiMUl
  */
 
 // Import ApiVerify And ReLoad And Parse And Reset
-import ApiVerify from '../../public/js/apiVerify.js';
+import { navigatorApiVerify } from '../../public/js/apiVerify.js';
 import reLoad from '../../plugin/its/index.js';
+import getViewAlert from '../../plugin/its/getViewAlert.js';
 import { parse } from '../../plugin/iniparse/index.js';
 import { 
 	reSet,
@@ -21,19 +22,34 @@ function Drag(event) {
 	event.stopPropagation();
 	const { clientX, clientY } = event.touches[0];
 	event.target.style.width = clientX.toString().concat('px');
-	event.target.style.top = clientY.toString().concat('px');
+	event.target.style.height = clientY.toString().concat('px');
 };
 
-new Alert({
-	title: 'Web Basics Framework Template',
-	message: '<a href="/">I am a reconstructed Alert function, support HTML tags.</a><br /></br ><a href="https://github.com/lzimul/">Developed by LZIMUL</a>',
-	close: 'Close'
-}).addEventListener('touchmove', Drag, false);
+(async () => {
+	new Alert({
+		title: 'Web Basics Framework Template',
+		message: await getViewAlert('test'),
+		close: 'Close'
+	});
+	new Alert({
+		title: 'Web Basics Framework Template',
+		message: '笑死了',
+		close: 'Close'
+	});
+	new Alert({
+		title: 'Web Basics Framework Template',
+		message: '哈哈哈哈',
+		close: 'Close'
+	});
+})();
+
+// Default no use 
+// .addEventListener('touchmove', Drag, false);
 
 // MainActivity
 window.addEventListener('load', global => {
-	new ApiVerify('navigator', event => {
-		event.geolocation.getCurrentPosition(async event => {
+	new navigatorApiVerify('geolocation', event => {
+		event.getCurrentPosition(async event => {
 			const { 
 				host,
 				port
