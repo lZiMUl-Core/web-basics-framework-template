@@ -6,15 +6,18 @@ const { log } = console;
 
 class Alert {
 	static list = [];
-	static frame = null;
 	static init = true
 
 	constructor({content, title, close}) {
 		const [FRAME, DIV, TITLE, TITLEDIV, CONTENT, CONTENTDIV, DONE] = [this.ce('div'), this.ce('div'), this.ce('h3'), this.ce('div'), this.ce('p'), this.ce('div'), this.ce('button')];
 		
 		this.ssa(FRAME, `position: absolute;
+		top: 30%;
 		left: 10%;
-		right: 10%;`);
+		right: 10%;
+		border: 1px solid #000;
+		border-radius: 9px;
+		box-shadow: 6.5px 6.5px 5px #888888;`);
 		this.ssa(DIV, `height: 230px;
 		background-color: rgba(232, 221, 203, 255);
 		text-align: center;
@@ -42,7 +45,7 @@ class Alert {
 		CONTENT.innerHTML = content;
 		DONE.innerText = close? close: 'Close';
 		DONE.addEventListener('click', event => {
-			DIV.remove();
+			FRAME.remove();
 			this.de();
 		});
 		this.ac(TITLEDIV, TITLE);
@@ -52,7 +55,7 @@ class Alert {
 		this.ac(DIV, DONE);
 		this.ac(FRAME, DIV);
 		Alert.list.push(FRAME);
-		Alert.frame = FRAME;
+		this.frame = FRAME;
 		if(Alert.init) {
 			this.de();
 			Alert.init = false;
@@ -73,7 +76,11 @@ class Alert {
 		new navigatorApiVerify('vibrate', () => navigator.vibrate(200), log);
 	}
 	addEventListener(event, callback) {
-		Alert.frame.addEventListener(event, callback, false);
+		this.frame.addEventListener(event, event => {
+			callback(Object.assign(event, {
+				Alert: this.frame
+			}));
+		}, false);
 	}
 }
 

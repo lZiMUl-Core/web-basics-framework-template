@@ -13,16 +13,22 @@ import getViewAlert from '../../plugin/its/getViewAlert.js';
 import { parse } from '../../plugin/iniparse/index.js';
 import { 
 	reSet,
-	log
+	log,
+	info,
+	warn,
+	error
 } from '../../public/js/realTimePreview.js';
 import Alert from '../../public/js/customAlert.js';
 
 // Drag Method
 function Drag(event) {
+	log(event);
 	event.stopPropagation();
 	const { clientX, clientY } = event.touches[0];
-	event.target.style.width = clientX.toString().concat('px');
-	event.target.style.height = clientY.toString().concat('px');
+	event.Alert.style.left = clientX.toString().concat('px');
+	event.Alert.style.top = clientY.toString().concat('px');
+	event.Alert.style.right = 'auto';
+	event.Alert.style.bottom = 'auto';
 };
 
 (async () => {
@@ -30,12 +36,12 @@ function Drag(event) {
 		title: 'Web Basics Framework Template',
 		content: await getViewAlert('test'),
 		close: 'Close'
-	});
+	}).addEventListener('touchmove', Drag, false);
 	new Alert({
 		title: 'Web Basics Framework Template',
-		content: '笑死了',
+		content: '哈哈哈',
 		close: 'Close'
-	}).addEventListener('touchmove', Drag, false);;
+	}).addEventListener('touchmove', Drag, false);
 })();
 
 // MainActivity
@@ -58,19 +64,19 @@ window.addEventListener('load', global => {
 		}, event => {
 			switch(event.code) {
 				case event.PERMISSION_DENIED:
-					log('The user rejects the request to obtain the geographic location');
+					warn('The user rejects the request to obtain the geographic location');
 				break;
 
 				case event.POSITION_UNAVAILABLE:
-					log('Location information is not available');
+					warn('Location information is not available');
 				break;
 
 				case event.TIMEOUT:
-					log('Request user geographic location timed out');
+					warn('Request user geographic location timed out');
 				break;
 
 				case event.UNKNOWN_ERROR:
-					log('Unknown mistake');
+					warn('Unknown mistake');
 				break;
 				};
 			}, {
@@ -81,5 +87,5 @@ window.addEventListener('load', global => {
 			"coordsType": "system",
 			"geocode": true
 		});
-	}, log);
+	}, warn);
 });

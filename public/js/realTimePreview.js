@@ -11,7 +11,12 @@ import reLoad from '../../plugin/its/index.js';
 import { parse } from '../../plugin/iniparse/index.js';
 import windowApiVerify from '../../public/js/apiVerify.js';
 
-const log = console.log;
+const { 
+	log,
+	info,
+	warn,
+	error
+} = console;
 
 // Little Func
 const reSet = url => url.replace(/"/img, '');
@@ -25,7 +30,7 @@ const reFresh = ((callback, delay) => {
 			callback.apply(this, parameter);
 		}, delay * 1000);
 	};
-}) (event => location.reload(), 1.5);
+}) (event => location.reload(), 2);
 
 // MainActivity
 window.addEventListener('load', async Global => {
@@ -45,5 +50,8 @@ window.addEventListener('load', async Global => {
 
 export {
 	reSet,
-	log
+	log,
+	info,
+	warn,
+	error
 };

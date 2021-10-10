@@ -21,9 +21,8 @@
 	"type": "module",
 	"main": "./src/app.js",
 	"scripts": {
-		"init": "rm -rf ./tool/.empty && npm install && npm install nodemon -g",
-		"dev": "nodemon",
-		"build": "echo hahaha, Build is not supported."
+		"init": "rm -rf ./tool/.empty && npm install",
+		"dev": "nodemon"
 	},
 	"keywords": [
 		"lZiMUl",
@@ -49,7 +48,7 @@
 		"url": "https://github.com/lZiMUl/web-basics-framework-template/issues/",
 		"email": "AA2908554069@gmail.com"
 	},
-	"private": false,
+	"private": true,
 	"preferGlobal": true,
 	"deprecated": false
 }
