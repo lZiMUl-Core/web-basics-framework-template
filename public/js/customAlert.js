@@ -1,13 +1,15 @@
 'use strict';
 
+import { navigatorApiVerify } from '../../public/js/apiVerify.js';
+
 const { log } = console;
 
 class Alert {
 	static list = [];
 	static frame = null;
 	static init = true
-	
-	constructor({message, title, close}) {
+
+	constructor({content, title, close}) {
 		const [FRAME, DIV, TITLE, TITLEDIV, CONTENT, CONTENTDIV, DONE] = [this.ce('div'), this.ce('div'), this.ce('h3'), this.ce('div'), this.ce('p'), this.ce('div'), this.ce('button')];
 		
 		this.ssa(FRAME, `position: absolute;
@@ -37,7 +39,7 @@ class Alert {
 		margin-top: 5.5px;
 		border-radius: 5px;`);
 		TITLE.innerText = title? title: window.location.toString().concat(' Say:');
-		CONTENT.innerHTML = message;
+		CONTENT.innerHTML = content;
 		DONE.innerText = close? close: 'Close';
 		DONE.addEventListener('click', event => {
 			DIV.remove();
@@ -48,13 +50,13 @@ class Alert {
 		this.ac(CONTENTDIV, CONTENT);
 		this.ac(DIV, CONTENTDIV);
 		this.ac(DIV, DONE);
-		this.ac(FRAME, DIV)
+		this.ac(FRAME, DIV);
 		Alert.list.push(FRAME);
 		Alert.frame = FRAME;
 		if(Alert.init) {
 			this.de();
 			Alert.init = false;
-		}
+		};
 	}
 	ce(type) {
 		return document.createElement(type);
@@ -68,12 +70,10 @@ class Alert {
 	de() {
 		if(Alert.list.length)
 		this.ac(document.body, Alert.list.shift());
+		new navigatorApiVerify('vibrate', () => navigator.vibrate(200), log);
 	}
 	addEventListener(event, callback) {
 		Alert.frame.addEventListener(event, callback, false);
-	}
-	setConfig(callback) {
-		callback(Alert.frame);
 	}
 }
 

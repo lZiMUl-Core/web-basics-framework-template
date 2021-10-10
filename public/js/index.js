@@ -28,28 +28,21 @@ function Drag(event) {
 (async () => {
 	new Alert({
 		title: 'Web Basics Framework Template',
-		message: await getViewAlert('test'),
+		content: await getViewAlert('test'),
 		close: 'Close'
 	});
 	new Alert({
 		title: 'Web Basics Framework Template',
-		message: '笑死了',
+		content: '笑死了',
 		close: 'Close'
-	});
-	new Alert({
-		title: 'Web Basics Framework Template',
-		message: '哈哈哈哈',
-		close: 'Close'
-	});
+	}).addEventListener('touchmove', Drag, false);;
 })();
-
-// Default no use 
-// .addEventListener('touchmove', Drag, false);
 
 // MainActivity
 window.addEventListener('load', global => {
-	new navigatorApiVerify('geolocation', event => {
+	new navigatorApiVerify('geolocation', ({ event }) => {
 		event.getCurrentPosition(async event => {
+			log(event)
 			const { 
 				host,
 				port
@@ -65,19 +58,19 @@ window.addEventListener('load', global => {
 		}, event => {
 			switch(event.code) {
 				case event.PERMISSION_DENIED:
-					log('The User Rejects The Request To Obtain The Geographic Location');
+					log('The user rejects the request to obtain the geographic location');
 				break;
 
 				case event.POSITION_UNAVAILABLE:
-					log('Location Information Is Not Available');
+					log('Location information is not available');
 				break;
 
 				case event.TIMEOUT:
-					log('Request User Geographic Location Timed Out');
+					log('Request user geographic location timed out');
 				break;
 
 				case event.UNKNOWN_ERROR:
-					log('Unknown Mistake');
+					log('Unknown mistake');
 				break;
 				};
 			}, {
@@ -88,7 +81,5 @@ window.addEventListener('load', global => {
 			"coordsType": "system",
 			"geocode": true
 		});
-	}, event => {
-		log("Your Current Browser Does Not Support Location Service Agreement");
-	});
+	}, log);
 });

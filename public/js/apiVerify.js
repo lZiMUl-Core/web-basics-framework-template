@@ -9,13 +9,13 @@ ProjectAuthor: lZiMUl
 // Little Module
 export default class windowApiVerify {
 	constructor(attribute, success, fail) {
-		fail? attribute in window? success(window[attribute]): fail(null): null;
+		success? attribute in window? success(window[attribute]): fail(`Your current browser does not support [${attribute}] service agreement`): null;
 	}
 };
 
 // Little Module
 export class navigatorApiVerify {
 	constructor(attribute, success, fail) {
-		fail? attribute in window.navigator? success(window.navigator[attribute]): fail(null): null;
+		success? attribute in navigator? success({event: navigator[attribute]}): fail(`Your current browser does not support [${attribute}] service agreement`): null;
 	}
 }

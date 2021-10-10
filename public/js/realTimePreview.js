@@ -36,13 +36,11 @@ window.addEventListener('load', async Global => {
 
 	new windowApiVerify('WebSocket', event => {
 		const server = new WebSocket(reSet(`ws://${host}:${port}`));
-		server.addEventListener('open', event => server.send('Hello, I Am A Website Client'));
+		server.addEventListener('open', event => server.send('Hello, I am a website client'));
 		server.addEventListener('message', ({data}) => console.log(data));
 		server.addEventListener('error', reFresh);
 		server.addEventListener('close', reFresh);
-	}, event => {
-		log('Your Current Browser Does Not Currently Support The WebSocket Communication Protocol');
-	});
+	}, log);
 });
 
 export {
