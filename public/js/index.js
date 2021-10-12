@@ -7,7 +7,7 @@ ProjectAuthor: lZiMUl
  */
 
 // Import ApiVerify And ReLoad And Parse And Reset
-import { navigatorApiVerify } from '../../public/js/apiVerify.js';
+import { navigatorApiVerify } from './apiVerify.js';
 import reLoad from '../../plugin/its/index.js';
 import getViewAlert from '../../plugin/its/getViewAlert.js';
 import { parse } from '../../plugin/iniparse/index.js';
@@ -17,8 +17,8 @@ import {
 	info,
 	warn,
 	error
-} from '../../public/js/realTimePreview.js';
-import Alert from '../../public/js/customAlert.js';
+} from './realTimePreview.js';
+import Alert from './customAlert.js';
 
 // Drag Method
 function Drag(event) {
