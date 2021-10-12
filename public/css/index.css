@@ -6,7 +6,7 @@
 html, body {
 	width: 100%;
 	height: 100%;
-	background-color: rgba(131, 175, 155, 255);
+	background-image: linear-gradient(yellow, green)
 }
 
 header, footer {

@@ -1,7 +1,5 @@
 'use strict';
 
-import { navigatorApiVerify } from '../../public/js/apiVerify.js';
-
 const { log } = console;
 
 class Alert {
@@ -12,14 +10,15 @@ class Alert {
 		const [FRAME, DIV, TITLE, TITLEDIV, CONTENT, CONTENTDIV, DONE] = [this.ce('div'), this.ce('div'), this.ce('h3'), this.ce('div'), this.ce('p'), this.ce('div'), this.ce('button')];
 		
 		this.ssa(FRAME, `position: absolute;
-		top: 30%;
-		left: 10%;
-		right: 10%;
+		top: 32.1%;
+		left: 12%;
+		right: 12%;
 		border: 1px solid #000;
 		border-radius: 9px;
-		box-shadow: 6.5px 6.5px 5px #888888;`);
-		this.ssa(DIV, `height: 230px;
-		background-color: rgba(232, 221, 203, 255);
+		font-size: 16px;
+		box-shadow: 5.5px 5.5px 13px #006400;`);
+		this.ssa(DIV, `height: 192.5px;
+		background-image: linear-gradient(to right, #00FA9A, #7B68EE);
 		text-align: center;
 		border-radius: 8px;`);
 		this.ssa(TITLEDIV, `margin-top: 4.5px;
@@ -27,8 +26,9 @@ class Alert {
 		margin-right: 5px;
 		border: 1px solid #000;
 		border-radius: 5px;`);
-		this.ssa(TITLE, `margin: 4.3px 4.3px;`);
-		this.ssa(CONTENTDIV, `height: 150px;
+		this.ssa(TITLE, `margin: 4.3px 4.3px;
+		font-size: 16px;`);
+		this.ssa(CONTENTDIV, `height: 118px;
 		text-align: center;
 		overflow: scroll;
 		margin-top: 3px;
@@ -36,11 +36,15 @@ class Alert {
 		margin-right: 5px;
 		border:1px solid #000;
 		border-radius: 5px;`)
-		this.ssa(CONTENT, `margin-top: 8px;`);
-		this.ssa(DONE, `width: 95%;
-		height: 28px;
+		this.ssa(CONTENT, `margin-top: 8px;
+		font-size: 16px;`);
+		this.ssa(DONE, `width: 88.5%;
+		height: 25px;
 		margin-top: 5.5px;
-		border-radius: 5px;`);
+		border-radius: 5px;
+		boder-style: solid;
+		border-color: red;
+		background-image: linear-gradient(to right, #00FA9A, #7B68EE);`);
 		TITLE.innerText = title? title: window.location.toString().concat(' Say:');
 		CONTENT.innerHTML = content;
 		DONE.innerText = close? close: 'Close';
@@ -73,7 +77,6 @@ class Alert {
 	de() {
 		if(Alert.list.length)
 		this.ac(document.body, Alert.list.shift());
-		new navigatorApiVerify('vibrate', () => navigator.vibrate(200), log);
 	}
 	addEventListener(event, callback) {
 		this.frame.addEventListener(event, event => {

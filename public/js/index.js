@@ -22,7 +22,6 @@ import Alert from '../../public/js/customAlert.js';
 
 // Drag Method
 function Drag(event) {
-	log(event);
 	event.stopPropagation();
 	const { clientX, clientY } = event.touches[0];
 	event.Alert.style.left = clientX.toString().concat('px');
@@ -31,18 +30,15 @@ function Drag(event) {
 	event.Alert.style.bottom = 'auto';
 };
 
-(async () => {
+(async (view) => {
 	new Alert({
 		title: 'Web Basics Framework Template',
-		content: await getViewAlert('test'),
+		content: await getViewAlert(view),
 		close: 'Close'
-	}).addEventListener('touchmove', Drag, false);
-	new Alert({
-		title: 'Web Basics Framework Template',
-		content: '哈哈哈',
-		close: 'Close'
-	}).addEventListener('touchmove', Drag, false);
-})();
+	})
+	// Default no use
+	// .addEventListener('touchmove', Drag);
+})('test');
 
 // MainActivity
 window.addEventListener('load', global => {
