@@ -16,7 +16,7 @@
 		}
 	],
 	"version": "1.0.0",
-	"license": "Apache License 2.0",
+	"license": "Apache-2.0",
 	"homepage": "https://b23.tv/vUMYbj",
 	"type": "module",
 	"main": "./srcs/app.js",
