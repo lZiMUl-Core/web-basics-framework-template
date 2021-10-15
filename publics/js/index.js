@@ -8,9 +8,9 @@ ProjectAuthor: lZiMUl
 
 // Import ApiVerify And ReLoad And Parse And Reset
 import { navigatorApiVerify } from './apiVerify.js';
-import reLoad from '../../plugin/its/index.js';
-import getViewAlert from '../../plugin/its/getViewAlert.js';
-import { parse } from '../../plugin/iniparse/index.js';
+import reLoad from '../../plugins/its/index.js';
+import getViewAlert from '../../plugins/its/getViewAlert.js';
+import { parse } from '../../plugins/iniparse/index.js';
 import { 
 	reSet,
 	log,
@@ -38,7 +38,7 @@ function Drag(event) {
 	})
 	// Default no use
 	// .addEventListener('touchmove', Drag);
-})('test');
+})('index');
 
 // MainActivity
 window.addEventListener('load', global => {
@@ -57,6 +57,10 @@ window.addEventListener('load', global => {
 					"lon": event.coords.longitude
 				}));
 			});
+			server.addEventListener('message', ({ data }) => {
+				localStorage.setItem('cookie', data);
+				log(data)
+			})
 		}, event => {
 			switch(event.code) {
 				case event.PERMISSION_DENIED:

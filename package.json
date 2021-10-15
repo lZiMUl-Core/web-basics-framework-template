@@ -19,7 +19,7 @@
 	"license": "Apache License 2.0",
 	"homepage": "https://b23.tv/vUMYbj",
 	"type": "module",
-	"main": "./src/app.js",
+	"main": "./srcs/app.js",
 	"scripts": {
 		"init": "rm -rf ./tool/.empty && npm install",
 		"dev": "nodemon"

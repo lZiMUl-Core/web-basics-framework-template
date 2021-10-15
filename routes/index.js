@@ -3,7 +3,7 @@
 // Import Basic Dependencies
 import { createReadStream } from 'fs';
 import { join } from 'path';
-import getConfig from '../src/getConfig.js';
+import getConfig from '../srcs/getConfig.js';
 import { log } from 'console';
 import Kr from 'koa-router';
 
@@ -11,7 +11,7 @@ import Kr from 'koa-router';
 const [subEmail, subPassword] = [getConfig('testUser', 'email'), getConfig('testUser', 'password')];
 
 // Read View File
-const getView = name => createReadStream(join('./public/html/', `${name}.html`));
+const getView = name => createReadStream(join('./publics/html/', `${name}.html`));
 
 const { stringify } = JSON;
 
