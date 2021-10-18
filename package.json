@@ -22,8 +22,8 @@
 	"type": "module",
 	"license": "Apache-2.0",
 	"scripts": {
-		"test": "node ./srcs/app.js",
-		"build": "node ./srcs/app.js",
+		"test": "nohup node ./srcs/app.js &",
+		"build": "nohup node ./srcs/app.js &",
 		"init": "rm -rf ./tool/.empty && npm install",
 		"dev": "nodemon"
 	},
