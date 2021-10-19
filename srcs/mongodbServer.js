@@ -24,6 +24,6 @@ const BlogPost = new Schema({
 (async function main(host, port) {
 	if(host && port) {
 		log([...arguments]);
-		await mongoose.connect(`mongodb://${host}:${port}`);
+		//await mongoose.connect(`mongodb://${host}:${port}`);
 	}
 } (getConfig('mongodb', 'host'), getConfig('mongodb', 'port')))
