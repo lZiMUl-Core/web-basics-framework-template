@@ -26,10 +26,10 @@
 	"type": "module",
 	"license": "Apache-2.0",
 	"scripts": {
-		"test": "nohup node ./srcs/app.js &",
-		"build": "nohup node ./srcs/app.js &",
-		"init": "rm -rf ./tool/.empty && npm install",
-		"dev": "nodemon"
+		"test": "node ./tests/index.js",
+		"build": "node ./builds/index.js",
+		"init": "rm -rf ./tool/.empty &&  npm install",
+		"dev": "nohup mysqld & nodemon"
 	},
 	"keywords": [
 		"lZiMUl",

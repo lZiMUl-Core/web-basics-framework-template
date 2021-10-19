@@ -1,6 +1,8 @@
 'use strict';
 
-import { navigatorApiVerify } from './apiVerify.js';
+import {
+	navigatorApiVerify
+} from './apiVerify.js';
 
 const {
 	log,

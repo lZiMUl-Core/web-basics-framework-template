@@ -7,10 +7,14 @@
 */
 
 // Import ApiVerify And ReLoad And Parse And Reset
-import { navigatorApiVerify } from './apiVerify.js';
+import {
+	navigatorApiVerify
+} from './apiVerify.js';
 import reLoad from '../../plugins/its/index.js';
 import getViewAlert from '../../plugins/its/getViewAlert.js';
-import { parse } from '../../plugins/iniparse/index.js';
+import {
+	parse
+} from '../../plugins/iniparse/index.js';
 import { 
 	reSet,
 	log,

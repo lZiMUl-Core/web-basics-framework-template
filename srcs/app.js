@@ -8,7 +8,9 @@
 
 // Import Basic Dependencies
 import Koa from 'koa';
-import { log } from 'console';
+import {
+log
+} from 'console';
 import Ks from 'koa-static';
 import Kb from 'koa-bodyparser';
 import getConfig from './getConfig.js';
