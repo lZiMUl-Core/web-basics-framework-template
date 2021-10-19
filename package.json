@@ -7,16 +7,20 @@
 		"email": "AA2908554069@gmail.com",
 		"url": "https://b23.tv/vUMYbj"
 	},
-	"contributors": [{
-		"name": "lZiMUl",
-		"email": "AA2908554069@gmail.com",
-		"url": "https://b23.tv/vUMYbj"
-	}],
-	"maintainers": [{
-		"name": "lZiMUl",
-		"email": "AA2908554069@gmail.com",
-		"url": "https://b23.tv/vUMYbj"
-	}],
+	"contributors": [
+		{
+			"name": "lZiMUl",
+			"email": "AA2908554069@gmail.com",
+			"url": "https://b23.tv/vUMYbj"
+		}
+	],
+	"maintainers": [
+		{
+			"name": "lZiMUl",
+			"email": "AA2908554069@gmail.com",
+			"url": "https://b23.tv/vUMYbj"
+		}
+	],
 	"homepage": "https://b23.tv/vUMYbj",
 	"main": "./srcs/app.js",
 	"type": "module",
@@ -41,6 +45,7 @@
 		"koa-bodyparser": "^4.3.0",
 		"koa-router": "^10.1.1",
 		"koa-static": "^5.0.0",
+		"mongoose": "^6.0.11",
 		"timer-mission": "^1.0.6",
 		"ws": "^8.2.2"
 	},

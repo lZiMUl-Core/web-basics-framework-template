@@ -1,10 +1,10 @@
 'use strict';
 
-/*
-ProjectName: web-basics-framework-template
-ProjectDescription: Web Basics Framework Template
-ProjectAuthor: lZiMUl
- */
+/**
+ * ProjectName: web-basics-framework-template
+ * ProjectDescription: Web Basics Framework Template
+ * ProjectAuthor: lZiMUl
+*/
 
 // Import ApiVerify And ReLoad And Parse And Reset
 import { navigatorApiVerify } from './apiVerify.js';
