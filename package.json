@@ -29,7 +29,7 @@
 		"test": "node ./tests/index.js",
 		"build": "node ./builds/index.js",
 		"init": "rm -rf ./tool/.empty &&  npm install",
-		"dev": "nohup mysqld & nodemon"
+		"dev": "nodemon"
 	},
 	"keywords": [
 		"lZiMUl",
