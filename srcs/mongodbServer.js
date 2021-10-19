@@ -6,7 +6,7 @@
  * ProjectAuthor: lZiMUl
 */
 
-import mongoose from 'mongoose'
+import mongoose from 'mongoose';
 import {
 log
 } from 'console';
