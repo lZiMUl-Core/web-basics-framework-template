@@ -27,6 +27,12 @@ Krs.get('/api', async socket => {
 				{
 					a: true
 				}],
+						a:{
+			a: [
+				{
+					a: true
+				}],
+		}
 		},
 		b:[
 			"a",
