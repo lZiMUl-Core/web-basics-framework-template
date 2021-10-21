@@ -44,4 +44,5 @@ const template = new Schema({
 	}
 } (getConfig('mongodb', 'username'), getConfig('mongodb', 'password'), getConfig('mongodb', 'hostname'), getConfig('mongodb', 'database')));
 
+// Export Database
 export default model('template', template);
