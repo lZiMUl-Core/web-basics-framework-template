@@ -28,6 +28,8 @@ class App extends React.Component {
 				<p onClick={this.add.bind(this)}>Click me of add up number value</p>
 				<br />
 				<a href="/">gotoback</a>
+				<br />
+				<a href="/api">Watch the html-json-highlight</a>
 			</div>
 		)
 	}

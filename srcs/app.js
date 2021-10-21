@@ -20,6 +20,7 @@ import './mongodbServer.js';
 // Import Router
 import indexView from '../routes/index.js';
 import successView from '../routes/successView.js';
+import api from '../routes/api.js';
 
 // Get Host And Port
 const [webHost, webPort] = [getConfig('webServer', 'host'), getConfig('webServer', 'port')];
@@ -32,6 +33,7 @@ webServer.use(new Ks('./'));
 webServer.use(new Kb);
 webServer.use(indexView);
 webServer.use(successView);
+webServer.use(api);
 
 // Set Up The 404 Page
 webServer.use(async socket => {
