@@ -13,7 +13,6 @@ import {
 import {
 	join
 } from 'path';
-import getConfig from '../srcs/getConfig.js';
 import {
 	log
 } from 'console';

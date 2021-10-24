@@ -6,6 +6,7 @@
  * ProjectAuthor: lZiMUl
 */
 
+
 class App extends React.Component {
 	constructor(configs) {
 		super(configs);

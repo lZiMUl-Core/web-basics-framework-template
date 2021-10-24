@@ -23,6 +23,21 @@ import {
 	error
 } from './realTimePreview.js';
 import Alert from './customAlert.js';
+import '../../node_modules/eruda/eruda.js';
+import ImportErudaPlugins from '../../plugins/its/importErudaPlugins.js';
+
+new ImportErudaPlugins('fps');
+new ImportErudaPlugins('features');
+new ImportErudaPlugins('timing');
+new ImportErudaPlugins('memory');
+new ImportErudaPlugins('code');
+new ImportErudaPlugins('benchmark');
+new ImportErudaPlugins('geolocation');
+new ImportErudaPlugins('dom');
+new ImportErudaPlugins('orientation');
+new ImportErudaPlugins('touches');
+
+eruda.init();
 
 // Drag Method
 function Drag(event) {

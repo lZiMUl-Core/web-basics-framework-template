@@ -6,11 +6,13 @@
  * ProjectAuthor: lZiMUl
 */
 
+import {
+	log
+} from 'console';
 import mongoose from 'mongoose';
 import {
-log
-} from 'console';
-import getConfig from './getConfig.js';
+	getConfig
+} from './api.js';
 
 const {
 	Schema,
@@ -39,7 +41,7 @@ const template = new Schema({
 			}
 		}, err => {
 			if(!err)
-			log('The database connection was successful');
+			log('The MongoDB connection was successful');
 		});
 	}
 } (getConfig('mongodb', 'username'), getConfig('mongodb', 'password'), getConfig('mongodb', 'hostname'), getConfig('mongodb', 'database')));

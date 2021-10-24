@@ -32,7 +32,7 @@ const reFresh = ((callback, delay) => {
 			callback.apply(this, parameter);
 		}, delay * 1000);
 	};
-}) (event => location.reload(), 2);
+}) (event => location.reload(), 3);
 
 // MainActivity
 window.addEventListener('load', async Global => {
@@ -42,7 +42,7 @@ window.addEventListener('load', async Global => {
 	} = parse(await reLoad()).exteriorWebSocket;
 
 	new windowApiVerify('WebSocket', event => {
-		const server = new WebSocket(reSet(`ws://${host}:${port}`));
+		const server = new WebSocket(reSet(`wss://${host}:${port}`));
 		server.addEventListener('open', event => server.send('Hello, I am a website client'));
 		server.addEventListener('message', ({data}) => console.log(data));
 		server.addEventListener('error', reFresh);
