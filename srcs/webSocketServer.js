@@ -7,13 +7,9 @@
 */
 
 // Import Basic Dependencies
-import {
-	log
-} from 'console';
+import { log } from 'console';
 import https from 'https';
-import {
-	WebSocketServer
-} from 'ws';
+import { WebSocketServer } from 'ws';
 import {
 	getConfig,
 	getSecurityLicense

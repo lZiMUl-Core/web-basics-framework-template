@@ -8,9 +8,7 @@
 
 // Import Config And Ini Parser And ApiVerify
 import reLoad from '../../plugins/its/index.js';
-import {
-	parse
-} from '../../plugins/iniparse/index.js';
+import { parse } from '../../plugins/iniparse/index.js';
 import windowApiVerify from './apiVerify.js';
 
 const { 

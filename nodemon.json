@@ -5,6 +5,7 @@
 		"./.git/",
 		"./.github/",
 		"./.vscode/",
-		"./.gitignore"
+		"./.gitignore",
+		"nohup.out"
 		]
 }

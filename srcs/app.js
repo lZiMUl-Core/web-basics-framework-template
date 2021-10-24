@@ -7,9 +7,7 @@
 */
 
 // Import Basic Dependencies
-import {
-	log
-} from 'console';
+import { log } from 'console';
 import https from 'https';
 import webServer from './koaServer.js';
 import {

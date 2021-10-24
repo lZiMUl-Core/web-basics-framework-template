@@ -6,13 +6,9 @@
  * ProjectAuthor: lZiMUl
 */
 
-import {
-	log
-} from 'console';
+import { log } from 'console';
 import mongoose from 'mongoose';
-import {
-	getConfig
-} from './api.js';
+import { getConfig } from './api.js';
 
 const {
 	Schema,
@@ -30,7 +26,7 @@ const template = new Schema({
 });
 
 // Set Up A Mongodb Server
-(async function main(username, password, hostname, database) {
+(async function (username, password, hostname, database) {
 	if(username && password && hostname && database) {
 		await mongoose.connect(`mongodb+srv://${hostname}/${database}?retryWrites=true&w=majority`, {
 			useNewUrlParser: true,

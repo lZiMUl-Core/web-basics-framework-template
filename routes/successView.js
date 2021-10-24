@@ -7,15 +7,9 @@
 */
 
 // Import Basic Dependencies
-import {
-	createReadStream
-} from 'fs';
-import {
-	join 
-} from 'path';
-import {
-	log
-} from 'console';
+import { log } from 'console';
+import { createReadStream } from 'fs';
+import { join } from 'path';
 import Kr from 'koa-router';
 
 // Read View File

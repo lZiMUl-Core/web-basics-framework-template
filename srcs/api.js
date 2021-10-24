@@ -6,12 +6,8 @@
  * ProjectAuthor: lZiMUl
 */
 
-import {
-	readFileSync
-} from 'fs';
-import {
-	parse
-} from 'ini';
+import { readFileSync } from 'fs';
+import { parse } from 'ini';
 
 // Read Configuration Data
 const getConfig = (index, key, file) => parse(readFileSync(`./configs/${file? file: 'default'}.ini`, 'utf-8'))[index][key] || null;

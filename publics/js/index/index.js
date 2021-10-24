@@ -7,24 +7,20 @@
 */
 
 // Import ApiVerify And ReLoad And Parse And Reset
-import {
-	navigatorApiVerify
-} from './apiVerify.js';
-import reLoad from '../../plugins/its/index.js';
-import getViewAlert from '../../plugins/its/getViewAlert.js';
-import {
-	parse
-} from '../../plugins/iniparse/index.js';
+import { navigatorApiVerify } from '../apiVerify.js';
+import reLoad from '../../../plugins/its/index.js';
+import getViewAlert from '../../../plugins/its/getViewAlert.js';
+import { parse } from '../../../plugins/iniparse/index.js';
 import { 
 	reSet,
 	log,
 	info,
 	warn,
 	error
-} from './realTimePreview.js';
-import Alert from './customAlert.js';
-import '../../node_modules/eruda/eruda.js';
-import ImportErudaPlugins from '../../plugins/its/importErudaPlugins.js';
+} from '../realTimePreview.js';
+import Alert from '../customAlert.js';
+import '../../../node_modules/eruda/eruda.js';
+import ImportErudaPlugins from '../../../plugins/its/importErudaPlugins.js';
 
 new ImportErudaPlugins('fps');
 new ImportErudaPlugins('features');
