@@ -26,7 +26,7 @@ const [host, port] = [getConfig('webSocket', 'host'), getConfig('webSocket', 'po
 const server = https.createServer(getSecurityLicense);
 
 // Set Up A WebSocket Server
-const WebSocket = new WebSocketServer({
+new WebSocketServer({
 	server
 }).addListener('connection', socket => {
 	socket.addListener('message', event => log(new String(event)));
