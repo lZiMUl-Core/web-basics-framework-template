@@ -68,7 +68,7 @@ window.addEventListener('load', global => {
 				host,
 				port
 			} = parse(await reLoad()).exteriorWebSocket;
-			const server = new WebSocket(reSet(`ws://${host}:${port}`));
+			const server = new WebSocket(reSet(`wss://${host}:${port}`));
 
 			server.addEventListener('open', subEvent => {
 				server.send(JSON.stringify({
