@@ -11,13 +11,7 @@ import { navigatorApiVerify } from '../apiVerify.js';
 import reLoad from '../../../plugins/its/index.js';
 import getViewAlert from '../../../plugins/its/getViewAlert.js';
 import { parse } from '../../../plugins/iniparse/index.js';
-import { 
-	reSet,
-	log,
-	info,
-	warn,
-	error
-} from '../realTimePreview.js';
+import reSet from '../realTimePreview.js';
 import Alert from '../customAlert.js';
 import '../../../node_modules/eruda/eruda.js';
 import ImportErudaPlugins from '../../../plugins/its/importErudaPlugins.js';
@@ -35,10 +29,18 @@ new ImportErudaPlugins('touches');
 
 eruda.init();
 
+const {
+	warn,
+	error
+} = console;
+
 // Drag Method
 function Drag(event) {
 	event.stopPropagation();
-	const { clientX, clientY } = event.touches[0];
+	const {
+		clientX,
+		clientY
+	} = event.touches[0];
 	event.Alert.style.left = clientX.toString().concat('px');
 	event.Alert.style.top = clientY.toString().concat('px');
 	event.Alert.style.right = 'auto';
@@ -59,39 +61,38 @@ function Drag(event) {
 window.addEventListener('load', global => {
 	new navigatorApiVerify('geolocation', ({ event }) => {
 		event.getCurrentPosition(async event => {
-			log(event)
-			const { 
+			const {
 				host,
 				port
 			} = parse(await reLoad()).exteriorWebSocket;
 			const server = new WebSocket(reSet(`wss://${host}:${port}`));
 
-			server.addEventListener('open', subEvent => {
-				server.send(JSON.stringify({
+			server.addEventListener('open', ({ target }) => {
+				target.send(JSON.stringify({
 					"lat": event.coords.latitude,
 					"lon": event.coords.longitude
 				}));
+				target.send('Hello, I am a website client for index')
 			});
 			server.addEventListener('message', ({ data }) => {
 				localStorage.setItem('cookie', data);
-				log(data)
 			})
 		}, event => {
 			switch(event.code) {
 				case event.PERMISSION_DENIED:
-					warn('The user rejects the request to obtain the geographic location');
+					error('The user rejects the request to obtain the geographic location');
 				break;
 
 				case event.POSITION_UNAVAILABLE:
-					warn('Location information is not available');
+					error('Location information is not available');
 				break;
 
 				case event.TIMEOUT:
-					warn('Request user geographic location timed out');
+					error('Request user geographic location timed out');
 				break;
 
 				case event.UNKNOWN_ERROR:
-					warn('Unknown mistake');
+					error('Unknown mistake');
 				break;
 				};
 			}, {

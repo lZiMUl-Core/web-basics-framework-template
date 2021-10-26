@@ -11,13 +11,6 @@ import reLoad from '../../plugins/its/index.js';
 import { parse } from '../../plugins/iniparse/index.js';
 import windowApiVerify from './apiVerify.js';
 
-const { 
-	log,
-	info,
-	warn,
-	error
-} = console;
-
 // Little Func
 const reSet = url => url.replace(/"/img, '');
 
@@ -41,17 +34,11 @@ window.addEventListener('load', async Global => {
 
 	new windowApiVerify('WebSocket', event => {
 		const server = new WebSocket(reSet(`wss://${host}:${port}`));
-		server.addEventListener('open', event => server.send('Hello, I am a website client'));
-		server.addEventListener('message', ({data}) => console.log(data));
+		server.addEventListener('open', event => server.send('Hello, I am a realTimePreview plugin'));
+		server.addEventListener('message', ({ data }) => console.log(data));
 		server.addEventListener('error', reFresh);
 		server.addEventListener('close', reFresh);
-	}, log);
+	}, console.warn);
 });
 
-export {
-	reSet,
-	log,
-	info,
-	warn,
-	error
-};
+export default reSet;
